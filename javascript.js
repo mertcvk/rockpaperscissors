@@ -13,3 +13,9 @@ if (computerChoice <= 33) {
 }
 console.log(getComputerChoice())
 
+//Write the logic to get the human choice
+function getHumanChoice () {
+    let humanChoice = prompt("Enter your choice:");
+    return (humanChoice);
+}
+console.log(getHumanChoice())
