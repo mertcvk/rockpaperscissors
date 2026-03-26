@@ -2,10 +2,10 @@
 //Setup the project structure
 //Write the logic to get the computer choice
 function getComputerChoice () {
-    let computerChoice = Math.random() * 100
-if (computerChoice <= 33) {
+    let computerChoice = Math.random()
+if (computerChoice <= 0.33) {
     return ("Rock") ;
-} else if (computerChoice <= 66) { 
+} else if (computerChoice <= 0.66) { 
     return ("Paper") ;
 } else {
     return ("Scissors")
