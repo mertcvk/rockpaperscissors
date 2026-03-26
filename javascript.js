@@ -25,21 +25,17 @@ let computerScore = 0
 //Write the logic to play a single round
 function playRound(humanChoice, computerChoice) { 
     humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase() ;
-    if (humanChoice === "Rock" && computerChoice === "Rock") {
-        return ("Rock against Rock. It is a tie! You: " + humanScore + " & " + "Computer: " + computerScore) ; 
-    } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
+    if (humanChoice === "Rock" && computerChoice === "Scissors") {
         humanScore++ ;
         return ("Rock against Scissors. It is a win! You: " + humanScore + " & " + "Computer: " + computerScore) ;
-    } else if (humanChoice === "Paper" && computerChoice === "Paper") {
-        return ("Paper against Paper. It is a tie! You: " + humanScore + " & " + "Computer: " + computerScore) ; 
     } else if (humanChoice === "Paper" && computerChoice === "Rock") {
         humanScore++ ;
         return ("Paper against Rock. It is a win! You: " + humanScore + " & " + "Computer: " + computerScore) ;
-    } else if (humanChoice === "Scissors" && computerChoice === "Scissors") {
-        return ("Scissors against Scissors. It is a tie! You: " + humanScore + " & " + "Computer: " + computerScore) ; 
     } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
        humanScore++ ;
         return ("Scissors against Paper. It is a win! You: " + humanScore + " & " + "Computer: " + computerScore) ;
+    } else if (humanChoice === computerChoice) {
+        return (humanChoice + " against " +computerChoice +". It is a tie! You: " + humanScore + " & " + "Computer: " + computerScore)
     } else {
         computerScore++ ;
         return (humanChoice + " against " + computerChoice + "." + " It is a lose! You: " + humanScore + " & " + "Computer: " + computerScore)
