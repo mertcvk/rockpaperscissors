@@ -4,11 +4,11 @@
 function getComputerChoice () {
     let computerChoice = Math.random() ;
     if (computerChoice <= 0.33) {
-        return "Rock" ;
+        return "rock" ;
     } else if (computerChoice <= 0.66) { 
-        return "Paper" ;
+        return "paper" ;
     } else {
-        return "Scissors" ;
+        return "scissors" ;
     }
 }
 
@@ -24,21 +24,21 @@ let computerScore = 0;
 
 //Write the logic to play a single round
 function playRound(humanChoice, computerChoice) { 
-    humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1).toLowerCase() ;
-    if (humanChoice === "Rock" && computerChoice === "Scissors") {
+    humanChoice = humanChoice.toLowerCase() ;
+    if (humanChoice === "rock" && computerChoice === "scissors") {
         humanScore++ ;
         return "Rock against Scissors. It is a win! You: " + humanScore + " & " + "Computer: " + computerScore ;
-    } else if (humanChoice === "Paper" && computerChoice === "Rock") {
+    } else if (humanChoice === "paper" && computerChoice === "rock") {
         humanScore++ ;
         return "Paper against Rock. It is a win! You: " + humanScore + " & " + "Computer: " + computerScore ;
-    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
+    } else if (humanChoice === "scissors" && computerChoice === "paper") {
        humanScore++ ;
         return "Scissors against Paper. It is a win! You: " + humanScore + " & " + "Computer: " + computerScore ;
     } else if (humanChoice === computerChoice) {
-        return humanChoice + " against " +computerChoice +". It is a tie! You: " + humanScore + " & " + "Computer: " + computerScore ;
+        return humanChoice.charAt(0).toUpperCase()+humanChoice.slice(1).toLowerCase() + " against " +computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1).toLowerCase() + ". It is a tie! You: " + humanScore + " & " + "Computer: " + computerScore ;
     } else {
         computerScore++ ;
-        return humanChoice + " against " + computerChoice + "." + " It is a lose! You: " + humanScore + " & " + "Computer: " + computerScore ;
+        return humanChoice.charAt(0).toUpperCase()+humanChoice.slice(1).toLowerCase() + " against " + computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1).toLowerCase() +"." + " It is a lose! You: " + humanScore + " & " + "Computer: " + computerScore ;
     }
     }
 
